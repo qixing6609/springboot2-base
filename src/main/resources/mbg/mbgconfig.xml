@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE generatorConfiguration  
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"  
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+	<classPathEntry
+		location="mysql-connector-java-5.1.21.jar" />
+
+	<context id="DB2Tables" targetRuntime="MyBatis3">
+		<property name="beginningDelimiter" value="`"/>
+        <property name="endingDelimiter" value="`"/>
+	
+		<plugin type="org.mybatis.generator.plugins.SerializablePlugin"/>
+
+		<commentGenerator>
+			<property name="suppressDate" value="true"/>
+			<property name="suppressAllComments" value="false"/>
+		</commentGenerator>
+
+		<!-- JDBC 连接信息 -->
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql://192.168.88.228:3308/ts_ydj" 
+			userId="root"
+			password="root">
+		</jdbcConnection>
+
+		<javaTypeResolver>
+			<property name="forceBigDecimals" value="false" />
+		</javaTypeResolver>
+
+		<javaModelGenerator targetPackage="com.ts.service.model.ydj"
+			targetProject="../../java">
+			<property name="enableSubPackages" value="true" />
+			<property name="trimStrings" value="true" />
+		</javaModelGenerator>
+
+		<sqlMapGenerator targetPackage="com.ts.service.mapper"
+			targetProject="../../java">
+			<property name="enableSubPackages" value="true" />
+		</sqlMapGenerator>
+
+		<javaClientGenerator type="ANNOTATEDMAPPER"
+                             targetPackage="com.ts.service.mapper" targetProject="../../java">
+			<property name="enableSubPackages" value="true" />
+		</javaClientGenerator>
+		
+		
+		<table tableName="ydj_order" domainObjectName="Order"><property name="mapUnderscoreToCamelCase" value="true" /><generatedKey column="id" sqlStatement="JDBC"/></table>
+		<table tableName="ydj_order_detail" domainObjectName="OrderDetail"><property name="mapUnderscoreToCamelCase" value="true" /><generatedKey column="id" sqlStatement="JDBC"/></table>
+		<!-- <table tableName="ydj_order_salesman_change" domainObjectName="OrderSalesmanChange"><property name="mapUnderscoreToCamelCase" value="true" /><generatedKey column="id" sqlStatement="JDBC"/></table> -->
+<!--<table tableName="ydj_coupon" domainObjectName="Coupon" delimitAllColumns="true"><property name="mapUnderscoreToCamelCase" value="true" /><generatedKey column="id" sqlStatement="JDBC"/></table> -->
+<!-- 		<table tableName="ydj_allot_order_rule" domainObjectName="AllotOrderRule"><property name="mapUnderscoreToCamelCase" value="true" /><generatedKey column="id" sqlStatement="JDBC"/></table>  -->
+<!-- 		<table tableName="ydj_order_record" domainObjectName="OrderRecord"><property name="mapUnderscoreToCamelCase" value="true" /><generatedKey column="id" sqlStatement="JDBC"/></table>  -->
+<!-- 		<table tableName="ydj_recharge_record" domainObjectName="RechargeRecord"><property name="mapUnderscoreToCamelCase" value="true" /><generatedKey column="id" sqlStatement="JDBC"/></table>  -->
+<!-- 	     <table tableName="ydj_add_order_record" domainObjectName="AddOrderRecord"><property name="mapUnderscoreToCamelCase" value="true" /><generatedKey column="id" sqlStatement="JDBC"/></table>  -->
+<!--      <table tableName="ydj_city" domainObjectName="City"><property name="mapUnderscoreToCamelCase" value="true" /><generatedKey column="id" sqlStatement="JDBC"/></table>  -->
+<!-- 	 <table tableName="ydj_city_category" domainObjectName="CityCategory"><property name="mapUnderscoreToCamelCase" value="true" /><generatedKey column="id" sqlStatement="JDBC"/></table> -->
+<!-- 	 <table tableName="ydj_coupon_card" domainObjectName="CouponCard"><property name="mapUnderscoreToCamelCase" value="true" /><generatedKey column="id" sqlStatement="JDBC"/></table> -->
+<!-- 	 <table tableName="ydj_deal_record" domainObjectName="DealRecord"><property name="mapUnderscoreToCamelCase" value="true" /><generatedKey column="id" sqlStatement="JDBC"/></table> -->
+<!-- 	 <table tableName="ydj_member_card" domainObjectName="MemberCard"><property name="mapUnderscoreToCamelCase" value="true" /><generatedKey column="id" sqlStatement="JDBC"/></table> -->
+<!-- 	 <table tableName="ydj_order_complain" domainObjectName="OrderComplain"><property name="mapUnderscoreToCamelCase" value="true" /><generatedKey column="id" sqlStatement="JDBC"/></table> -->
+<!-- 	 <table tableName="ydj_order_salesman" domainObjectName="OrderSalesman"><property name="mapUnderscoreToCamelCase" value="true" /><generatedKey column="id" sqlStatement="JDBC"/></table> -->
+<!-- 	 <table tableName="ydj_package" domainObjectName="Package"><property name="mapUnderscoreToCamelCase" value="true" /><generatedKey column="id" sqlStatement="JDBC"/></table> -->
+<!-- 	 <table tableName="ydj_package_product" domainObjectName="PackageProduct"><property name="mapUnderscoreToCamelCase" value="true" /><generatedKey column="id" sqlStatement="JDBC"/></table> -->
+<!-- 	 <table tableName="ydj_product" domainObjectName="Product"><property name="mapUnderscoreToCamelCase" value="true" /><generatedKey column="id" sqlStatement="JDBC"/></table> -->
+<!-- 	 <table tableName="ydj_product_category" domainObjectName="productCategory"><property name="mapUnderscoreToCamelCase" value="true" /><generatedKey column="id" sqlStatement="JDBC"/></table> -->
+	<!--  <table tableName="ts_user" domainObjectName="TsUser"><property name="mapUnderscoreToCamelCase" value="true" /><generatedKey column="id" sqlStatement="JDBC"/></table>  -->
+<!-- 	 <table tableName="ydj_product_model" domainObjectName="ProductModel"><property name="mapUnderscoreToCamelCase" value="true" /><generatedKey column="id" sqlStatement="JDBC"/></table> -->
+	 <!-- <table tableName="ydj_product_model" domainObjectName="ProductModel"><property name="mapUnderscoreToCamelCase" value="true" /><generatedKey column="id" sqlStatement="JDBC"/></table> -->
+<!-- 	 <table tableName="ydj_product_pic" domainObjectName="ProductPic"><property name="mapUnderscoreToCamelCase" value="true" /><generatedKey column="id" sqlStatement="JDBC"/></table> -->
+<!-- 	 <table tableName="ydj_product_skill" domainObjectName="ProductSkill"><property name="mapUnderscoreToCamelCase" value="true" /><generatedKey column="id" sqlStatement="JDBC"/></table> -->
+<!-- 	 <table tableName="ydj_product_tag" domainObjectName="ProductTag"><property name="mapUnderscoreToCamelCase" value="true" /><generatedKey column="id" sqlStatement="JDBC"/></table> -->
+<!-- 	 <table tableName="ydj_safeguard" domainObjectName="Safeguard"><property name="mapUnderscoreToCamelCase" value="true" /><generatedKey column="id" sqlStatement="JDBC"/></table> -->
+<!-- 	 <table tableName="ydj_safeguard_product" domainObjectName="SafeguardProduct"><property name="mapUnderscoreToCamelCase" value="true" /><generatedKey column="id" sqlStatement="JDBC"/></table> -->
+<!-- 	 <table tableName="ydj_salesman" domainObjectName="Salesman"><property name="mapUnderscoreToCamelCase" value="true" /><generatedKey column="id" sqlStatement="JDBC"/></table> -->
+<!-- 	 <table tableName="ydj_salesman_skill" domainObjectName="SalesmanSkill"><property name="mapUnderscoreToCamelCase" value="true" /><generatedKey column="id" sqlStatement="JDBC"/></table> -->
+<!-- 	 <table tableName="ydj_skill" domainObjectName="Skill"><property name="mapUnderscoreToCamelCase" value="true" /><generatedKey column="id" sqlStatement="JDBC"/></table> -->
+<!-- 	 <table tableName="ydj_tag" domainObjectName="Tag"><property name="mapUnderscoreToCamelCase" value="true" /><generatedKey column="id" sqlStatement="JDBC"/></table> -->
+<!--      <table tableName="ydj_user" domainObjectName="User"><property name="mapUnderscoreToCamelCase" value="true" /><generatedKey column="id" sqlStatement="JDBC"/></table> -->
+<!-- 	 <table tableName="ydj_user_address" domainObjectName="UserAddress"><property name="mapUnderscoreToCamelCase" value="true" /><generatedKey column="id" sqlStatement="JDBC"/></table> -->
+<!-- 	 <table tableName="ydj_user_coupon" domainObjectName="UserCoupon"><property name="mapUnderscoreToCamelCase" value="true" /><generatedKey column="id" sqlStatement="JDBC"/></table>  -->
+<!-- 		<table tableName="ydj_phone_code" domainObjectName="PhoneCode"><property name="mapUnderscoreToCamelCase" value="true" /><generatedKey column="id" sqlStatement="JDBC"/></table>
+		<table tableName="ydj_user" domainObjectName="User"><property name="mapUnderscoreToCamelCase" value="true" /><generatedKey column="id" sqlStatement="JDBC"/></table>
+		<table tableName="ydj_phone_msg_template" domainObjectName="PhoneMsgTemplate"><property name="mapUnderscoreToCamelCase" value="true" /><generatedKey column="id" sqlStatement="JDBC"/></table>
+		<table tableName="ydj_phone_msg" domainObjectName="PhoneMsg"><property name="mapUnderscoreToCamelCase" value="true" /><generatedKey column="id" sqlStatement="JDBC"/></table> -->
+		
+		<!-- <table tableName="ydj_app_version" domainObjectName="AppVersion"><property name="mapUnderscoreToCamelCase" value="true" /><generatedKey column="id" sqlStatement="JDBC"/></table> -->
+
+
+	</context>
+</generatorConfiguration>  
