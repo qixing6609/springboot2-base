@@ -9,6 +9,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.Environment;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.converter.StringHttpMessageConverter;
+import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
 
@@ -27,10 +28,14 @@ import com.ts.interceptor.MyInterceptor;
 public class MyWebAppConfigurer extends WebMvcConfigurationSupport {
 	@Autowired
 	private Environment env;
+	@Autowired
+	private MyInterceptor myInterceptor;
 	
-	@Bean
-	public MyInterceptor myInterceptor() {
-		return new MyInterceptor();
+	@Override
+	public void addInterceptors(InterceptorRegistry registry) {
+//		registry.addInterceptor(myInterceptor).addPathPatterns("/ydj/**");
+//		registry.addInterceptor(authorizeInterceptor()).addPathPatterns("/ydj-backstage/**");
+		super.addInterceptors(registry);
 	}
 	
 	
