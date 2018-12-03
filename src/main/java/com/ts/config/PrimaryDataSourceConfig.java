@@ -20,7 +20,7 @@ import com.alibaba.druid.pool.DruidDataSource;
 @MapperScan(basePackages = { PrimaryDataSourceConfig.SECURITY_PACKAGE},
 			sqlSessionFactoryRef = "YdjDbSqlSessionFactory")
 public class PrimaryDataSourceConfig {
-	static final String SECURITY_PACKAGE = "com.ydj.service.mapper";
+	static final String SECURITY_PACKAGE = "com.ts.mapper";
 
 	@Autowired
 	private Environment env;

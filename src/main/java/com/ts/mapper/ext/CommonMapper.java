@@ -7,8 +7,10 @@ import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
+import com.ts.mapper.ConfigMapper;
 
-public interface CommonMapper{
+
+public interface CommonMapper extends ConfigMapper{
 
 	@Select(" ${sql} ")
 	List<Map<String,Object>> execSql(@Param("sql") String sql);

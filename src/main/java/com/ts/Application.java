@@ -43,7 +43,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableSwagger2
 @EnableAsync
 @EnableConfigurationProperties({Config.class, SalipayConfig.class, LalipayConfig.class, WeiXinConfig.class, JpushConfig.class})
-@PropertySource(value = {"classpath:application-dev.properties"})
+//@PropertySource(value = {"classpath:application-dev.properties"})
 @EnableScheduling
 public class Application {
 private static Logger logger = LoggerFactory.getLogger(Application.class);
